@@ -1,0 +1,16 @@
+#include <iostream>
+
+template<typename TV, typename TE>
+class Graph<TV, TE>{
+	//TODO
+};
+
+template<typename TV, typename TE>
+class ListGraph: public Graph<TV, TE>{
+	//TODO
+};
+
+template<typename TV, typename TE>
+class HashGraph: public Graph<TV, TE>{
+	//TODO
+};
