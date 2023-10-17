@@ -33,14 +33,14 @@ int main()
 		N = pow(10, i);
 
 		//1-insertar vertices
-		for (int j = 0; j < N; ++i)
+		for (int j = 0; j < N; ++j)
 		{
 			grafitoAdy.insertVertex(j);
 			grafitoHash.insertVertex(j);
 		}
 
-		//2-insertar aristas en ambos grafos
-		for (int j = 0; j < N; ++i)
+		//2-insertar aristas en ambos grafos (puede variar el factor de densidad)
+		for (int j = 0; j < N*(N - 1)*0.3; ++j)
 		{
 			init = generarInt(0, N-1);//genera numero aleatorio
 			end = generarInt(0, N-1, init);//genera numero aleatorio diferente de init
@@ -48,6 +48,7 @@ int main()
 			grafitoAdy.createEdge(init, end, peso);
 			grafitoHash.createEdge(init, end, peso);
 		}
+		
 		ASSERT(grafitoAdy.density() == grafitoHash.density(), "Los grafos no son iguales");
 
 		//3- ejecutar una operacion y capturar los tiempos	
